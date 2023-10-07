@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link href="/dist/output.css" rel="stylesheet" />
+     -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="bg-slate-900 text-white capitalize font-medium">
+    <h1 class="bg-slate-600 text-5xl grid place-content-center">
+      click to change background-Color
+    </h1>
+    <br /><br /><br /><br /><br />
+    <main class="flex justify-center">
+      <span
+        class="buttton bg-red-800 p-5 border-2 m-2 cursor-pointer"
+        id="red"
+      ></span
+      ><span
+        class="buttton bg-green-800 p-5 border-2 m-2 cursor-pointer"
+        id="green"
+      ></span
+      ><span
+        class="buttton bg-blue-800 p-5 border-2 m-2 cursor-pointer"
+        id="blue"
+      ></span
+      ><span
+        class="buttton bg-yellow-500 p-5 border-2 m-2 cursor-pointer"
+        id="yellow"
+      ></span>
+    </main>
+    <script>
+      const btn = document.querySelectorAll("span");
+      //   console.log(btn);
+      const body = document.querySelector("body");
+      //   console.log(body);
+      btn.forEach((color) => {
+        color.addEventListener("click", (e) => {
+          console.log(e.target);
+          //   if (e.target.id == "red") {
+          //     document.body.style.backgroundColor = "red";
+          //   }
+          //   if (e.target.id == "blue") {
+          //     document.body.style.backgroundColor = "blue";
+          //   }
+          //   if (e.target.id == "green") {
+          //     document.body.style.backgroundColor = "green";
+          //   }
+          //   if (e.target.id == "yellow") {
+          //     document.body.style.backgroundColor = "yellow";
+          //   }
+          switch (e.target.id) {
+            case "red":
+              document.body.style.backgroundColor = "red";
+              break;
+
+            case "blue":
+              document.body.style.backgroundColor = "blue";
+              break;
+
+            case "green":
+              document.body.style.backgroundColor = "green";
+              break;
+
+            case "yellow":
+              document.body.style.backgroundColor = "yellow";
+
+              break;
+
+            default:
+              document.body.style.backgroundColor = "black";
+              break;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
